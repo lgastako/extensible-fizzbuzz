@@ -18,7 +18,7 @@ wacky = fromRules
   ]
 
 fromRules :: [Rule] -> Integer -> String
-fromRules rules n = fromMaybe (show n) . mconcat rules $ n
+fromRules rules = fromMaybe <$> show <*> mconcat rules
 
 rule :: Integer -> String -> Rule
 rule m s n
